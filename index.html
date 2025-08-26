@@ -92,12 +92,16 @@
                   alt=""
                 />
               </div>
-              <span><i class="fa-regular fa-heart"></i></span>
+              <span id="heart-icon-main"
+                ><i class="fa-regular fa-heart"></i
+              ></span>
             </span>
             <h3 class="font-bold text-[#111111] text-2xl mt-4">
               National Emergency Number
             </h3>
-            <p class="text-[18px] text-[#4A4A4A] mb-6">National Emergency</p>
+            <p id="national-em-title" class="text-[18px] text-[#4A4A4A] mb-6">
+              National Emergency
+            </p>
             <h3
               id="national-em-number"
               class="font-bold text-[32px] text-[#111111] mb-2"
@@ -121,7 +125,8 @@
                 id="call-btn"
                 class="btn btn-neutral !border-none w-1/2 !bg-[#00A63E] text-[#ffffff]"
               >
-                <span><i class="fa-solid fa-phone"></i></span>Call
+                <span><i id="call-icon" class="fa-solid fa-phone"></i></span
+                >Call
               </button>
             </div>
           </div>
@@ -489,9 +494,9 @@
           </div>
         </section>
         <aside
-          class="right-container md:col-span-3 border-2 p-4 h-[600px] bg-[#ffffff]"
+          class="right-container md:col-span-3 p-4 h-[600px] w-full bg-[#ffffff]"
         >
-          <section class="flex items-center justify-between">
+          <section class="flex items-center justify-between w-full">
             <div class="flex gap-4">
               <span><i class="fa-solid fa-clock-rotate-left"></i></span>
               <h3 class="text-[#111111] font-semibold">Call History</h3>
@@ -499,14 +504,14 @@
 
             <button
               id="call-btn"
-              class="btn btn-neutral !border-none !px-10 !rounded-full !bg-[#00A63E] text-[#ffffff]"
+              class="rounded-full bg-[#00A63E] pl-4 pr-4 py-3 text-[#ffffff]"
             >
-              <span><i class="fa-solid fa-phone"></i></span>Call
+              Clear
             </button>
           </section>
         </aside>
       </section>
     </main>
-    <footer></footer>
+    <script src="./script/script.js"></script>
   </body>
 </html>
