@@ -51,7 +51,7 @@
             <img class="w-6" h-6 src="./assets/coin.png" alt="" />
           </div>
           <div class="bg-[#00A63E] rounded-full px-5 py-2 md:px-9 md:py-4">
-            <span id="copy-count">2</span> Copy
+            <span id="copy-count">0</span> Copy
           </div>
         </div>
       </nav>
@@ -494,7 +494,7 @@
           </div>
         </section>
         <aside
-          class="right-container md:col-span-3 p-4 h-[600px] w-full bg-[#ffffff]"
+          class="right-container md:col-span-3 p-4 h-full w-full bg-[#ffffff]"
         >
           <section class="flex items-center justify-between w-full">
             <div class="flex gap-4">
@@ -503,12 +503,13 @@
             </div>
 
             <button
-              id="call-btn"
+              id="clear-btn-handler"
               class="rounded-full bg-[#00A63E] pl-4 pr-4 py-3 text-[#ffffff]"
             >
               Clear
             </button>
           </section>
+          <section id="history-container"></section>
         </aside>
       </section>
     </main>
