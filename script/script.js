@@ -1,5 +1,5 @@
 //All Re-Usable function hgere
-//  Hear Icon Count
+//  Heart Icon Count
 function heartIconCount(id) {
   const number = 1;
   const heartIconNUmber = parseInt(document.getElementById(id).innerText);
@@ -14,45 +14,47 @@ function coinCountHandler(id) {
   const newCoinCount = coinCount - number;
   document.getElementById(id).innerText = newCoinCount;
 }
-//copy to mclipboard just copy handler
+//Heart icon event handler  11111
+const allHeartIcons = document.getElementsByClassName("icon-heart-main");
 
-document
-  .getElementById("heart-icon-main")
-  .addEventListener("click", function (e) {
+for (let allHeartIcon of allHeartIcons) {
+  allHeartIcon.addEventListener("click", function (e) {
     e.preventDefault;
     heartIconCount("heart-count");
   });
+}
+// call button event handler 2222
 
-// call button event handler
-
-document.getElementById("call-btn").addEventListener("click", function (e) {
-  e.preventDefault;
-  const nationalEmTitle =
-    document.getElementById("national-em-title").innerText;
-  const nationalEmNumber =
+const allBtnHandlers = document.getElementsByClassName("btn-call");
+for (let allBtnHandler of allBtnHandlers) {
+  allBtnHandler.addEventListener("click", function (e) {
+    const nationalEmTitle =
+      allBtnHandler.parentNode.parentNode.childNodes[5].innerText;
+    const nationalEmNumber =
+      allBtnHandler.parentNode.parentNode.children[3].innerText;
     document.getElementById("national-em-number").innerText;
-  const coinElement = document.getElementById("coin-count");
-  const number = 20;
-  const coinCount = parseInt(coinElement.innerText);
-  const newCoinCount = coinCount - number;
-  if (newCoinCount < 0) {
-    newCoinCount = 0;
-  }
-  coinElement.innerText = newCoinCount;
+    const coinElement = document.getElementById("coin-count");
+    const number = 20;
+    const coinCount = parseInt(coinElement.innerText);
+    const newCoinCount = coinCount - number;
+    if (newCoinCount < 0) {
+      newCoinCount = 0;
+    }
+    coinElement.innerText = newCoinCount;
 
-  if (newCoinCount >= number) {
-    alert("📞 Calling " + nationalEmTitle + " " + nationalEmNumber);
-  } else if (newCoinCount < number) {
-    alert(
-      "⚠️ You don't have enough coins. You need at least 20 coins to make a call."
-    );
-  }
+    if (newCoinCount >= number) {
+      alert("📞 Calling " + nationalEmTitle + " " + nationalEmNumber);
+    } else if (newCoinCount < number) {
+      alert(
+        "⚠️ You don't have enough coins. You need at least 20 coins to make a call."
+      );
+    }
 
-  const historySlide = document.getElementById("history-container");
+    const historySlide = document.getElementById("history-container");
 
-  const newCart = document.createElement("div");
-  newCart.classList.add("new-cart-container");
-  newCart.innerHTML = `
+    const newCart = document.createElement("div");
+    newCart.classList.add("new-cart-container");
+    newCart.innerHTML = `
     <div class="flex justify-between items-center mb-4 rounded-md p-6 mt-6  bg-[#f5fff6]">
       <div>
         <h3 class="text-[#111111] font-semibold text-[18px]">${nationalEmTitle}</h3>
@@ -66,10 +68,12 @@ document.getElementById("call-btn").addEventListener("click", function (e) {
     </div>
   `;
 
-  historySlide.append(newCart);
-});
+    historySlide.append(newCart);
+  });
 
-// aside section clear button handler
+  const date = new Date().toLocaleTimeString();
+}
+// aside section clear button handler 33333
 document
   .getElementById("clear-btn-handler")
   .addEventListener("click", function (e) {
@@ -78,24 +82,26 @@ document
     historySlide.remove();
   });
 
-// copy button handler
-document.getElementById("copy-btn").addEventListener("click", function (e) {
-  e.preventDefault;
-  const copyCount = parseInt(document.getElementById("copy-count").innerText);
-  const number = 1;
-  const nationalEmNUmberCopy = parseInt(
-    document.getElementById("national-em-number").innerText
-  );
+// copy button handler 4444
 
-  alert("Number has been copied  " + nationalEmNUmberCopy);
-  const copyNumberInrease = copyCount + number;
+const allCopyBtns = document.getElementsByClassName("btn-copy");
+for (let allCopyBtn of allCopyBtns) {
+  allCopyBtn.addEventListener("click", function (e) {
+    e.preventDefault;
+    const copyCount = parseInt(document.getElementById("copy-count").innerText);
+    const number = 1;
+    const nationalEmNUmberCopy =
+      allCopyBtn.parentNode.parentNode.children[3].innerText;
+    alert("Number has been copied  " + nationalEmNUmberCopy);
+    const copyNumberInrease = copyCount + number;
 
-  document.getElementById("copy-count").innerText = copyNumberInrease;
+    document.getElementById("copy-count").innerText = copyNumberInrease;
 
-  navigator.clipboard.writeText(nationalEmNUmberCopy);
-  then(() => {
-    alert("Text copied to clipboard!"); // successful হলে alert
-  }).catch((err) => {
-    console.error("Failed to copy text: ", err);
+    navigator.clipboard.writeText(nationalEmNUmberCopy);
+    then(() => {
+      alert("Text copied to clipboard!");
+    }).catch((err) => {
+      console.error("Failed to copy text: ", err);
+    });
   });
-});
+}
