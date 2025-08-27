@@ -51,6 +51,8 @@ for (let allBtnHandler of allBtnHandlers) {
     }
 
     const historySlide = document.getElementById("history-container");
+    const dateTime = new Date().toLocaleTimeString();
+    console.log(dateTime);
 
     const newCart = document.createElement("div");
     newCart.classList.add("new-cart-container");
@@ -62,7 +64,7 @@ for (let allBtnHandler of allBtnHandlers) {
       </div>
       <div>
         <h4 class="text-[#111111] text-[18px]">
-          <span>11.40.25</span>PM
+          <span>${dateTime}</span>
         </h4>
       </div>
     </div>
@@ -70,8 +72,6 @@ for (let allBtnHandler of allBtnHandlers) {
 
     historySlide.append(newCart);
   });
-
-  const date = new Date().toLocaleTimeString();
 }
 // aside section clear button handler 33333
 document
