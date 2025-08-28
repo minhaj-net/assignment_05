@@ -42,6 +42,8 @@ for (let allBtnHandler of allBtnHandlers) {
     }
     coinElement.innerText = newCoinCount;
 
+    // coin condition here
+
     if (newCoinCount >= number) {
       alert("📞 Calling " + nationalEmTitle + " " + nationalEmNumber);
     } else if (newCoinCount < number) {
