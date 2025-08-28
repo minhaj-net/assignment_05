@@ -33,20 +33,18 @@ for (let allBtnHandler of allBtnHandlers) {
     const nationalEmNumber =
       allBtnHandler.parentNode.parentNode.children[3].innerText;
     document.getElementById("national-em-number").innerText;
+
     const coinElement = document.getElementById("coin-count");
     const number = 20;
-    const coinCount = parseInt(coinElement.innerText);
-    const newCoinCount = coinCount - number;
-    if (newCoinCount < 0) {
-      newCoinCount = 0;
-    }
-    coinElement.innerText = newCoinCount;
 
-    // coin condition here
+    let coinCount = parseInt(coinElement.innerText);
 
-    if (newCoinCount >= number) {
+    if (coinCount >= number) {
+      coinCount -= number;
+      coinElement.innerText = coinCount;
+
       alert("📞 Calling " + nationalEmTitle + " " + nationalEmNumber);
-    } else if (newCoinCount < number) {
+    } else {
       alert(
         "⚠️ You don't have enough coins. You need at least 20 coins to make a call."
       );
@@ -54,8 +52,6 @@ for (let allBtnHandler of allBtnHandlers) {
 
     const historySlide = document.getElementById("history-container");
     const dateTime = new Date().toLocaleTimeString();
-    console.log(dateTime);
-
     const newCart = document.createElement("div");
     newCart.classList.add("new-cart-container");
     newCart.innerHTML = `
