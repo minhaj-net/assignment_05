@@ -1,8 +1,8 @@
 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
-   agula sob e DOM (Document Object Model) থেকে element খুঁজে বের করার জন্য ব্যবহার হয়।
+   এগুলা সবই DOM (Document Object Model) থেকে element খুঁজে বের করার জন্য ব্যবহার হয়।
    তবে আলাদা আলাদা কাজ করে।
    1.getElementById
-   শুধু একটা element খুঁজে pawa jai যেটার id দেওয়া আছে।
+   শুধু একটা element খুঁজে পাওয়া যায় যেটার id দেওয়া আছে।
    সরাসরি element object রিটার্ন করে
    যদি ওই id না থাকে null রিটার্ন করবে।
    সবচেয়ে ফাস্ট কাজ করে, কারণ id সবসময় ইউনিক হয়
@@ -16,10 +16,10 @@
    এখানে CSS selector ব্যবহার করা যায় (যেমন: .class, #id, div > p ইত্যাদি)।
    শুধু প্রথম মিলে যাওয়া element রিটার্ন করে।
 
-   4. querySelectorAll
-      অনেক element লাগলে আর CSS selector ব্যবহার করতে চাইলে querySelectorAll ব্যবহার করো।  
-       এটা সব element নিয়ে আসবে, শুধু প্রথমটা না।
-      ফলাফল NodeList আকারে আসবে, যেটার উপর loop চালানো যাবে।
+   4.querySelectorAll
+   অনেক element লাগলে আর CSS selector ব্যবহার করতে চাইলে querySelectorAll ব্যবহার করো।  
+    এটা সব element নিয়ে আসবে, শুধু প্রথমটা না।
+   ফলাফল NodeList আকারে আসবে, যেটার উপর loop চালানো যাবে।
 
 2. How do you create and insert a new element into the DOM?
    1.document.createElement("div") diye .Notun akta element ke create korbo 2.
@@ -45,9 +45,7 @@
    3.Dynamically নতুন element যোগ হলে সেটার উপরেও event কাজ করবে, extra কিছু করতে হয় না।
 
 5. What is the difference between preventDefault() and stopPropagation() methods?
-
    preventDefault() → এই মেথড কোনো element-এর default behavior বন্ধ করে দেয়।
    যেমন, form-এর submit button চাপলে সাধারণত পেজ reload হয়। কিন্তু preventDefault() ব্যবহার করলে সেই reload আর হবে না।
-
    stopPropagation() → এই মেথড event bubbling বা event capturing বন্ধ করে দেয়।
    মানে হলো, event টা parent element-এ আর উপরে propagate হবে না।

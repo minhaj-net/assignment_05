@@ -43,18 +43,11 @@ for (let allBtnHandler of allBtnHandlers) {
       coinCount -= number;
       coinElement.innerText = coinCount;
 
-      alert("📞 Calling " + nationalEmTitle + " " + nationalEmNumber);
-    } else {
-      alert(
-        "⚠️ You don't have enough coins. You need at least 20 coins to make a call."
-      );
-    }
-
-    const historySlide = document.getElementById("history-container");
-    const dateTime = new Date().toLocaleTimeString();
-    const newCart = document.createElement("div");
-    newCart.classList.add("new-cart-container");
-    newCart.innerHTML = `
+      const historySlide = document.getElementById("history-container");
+      const dateTime = new Date().toLocaleTimeString();
+      const newCart = document.createElement("div");
+      newCart.classList.add("new-cart-container");
+      newCart.innerHTML = `
     <div class="flex justify-between items-center mb-4 rounded-md p-6 mt-6  bg-[#f5fff6]">
       <div>
         <h3 class="text-[#111111] font-semibold text-[18px]">${nationalEmTitle}</h3>
@@ -68,7 +61,34 @@ for (let allBtnHandler of allBtnHandlers) {
     </div>
   `;
 
-    historySlide.append(newCart);
+      historySlide.append(newCart);
+
+      alert("📞 Calling " + nationalEmTitle + " " + nationalEmNumber);
+    } else {
+      alert(
+        "⚠️ You don't have enough coins. You need at least 20 coins to make a call."
+      );
+    }
+
+    //   const historySlide = document.getElementById("history-container");
+    //   const dateTime = new Date().toLocaleTimeString();
+    //   const newCart = document.createElement("div");
+    //   newCart.classList.add("new-cart-container");
+    //   newCart.innerHTML = `
+    //   <div class="flex justify-between items-center mb-4 rounded-md p-6 mt-6  bg-[#f5fff6]">
+    //     <div>
+    //       <h3 class="text-[#111111] font-semibold text-[18px]">${nationalEmTitle}</h3>
+    //       <p class="text-[18px] text-[#4A4A4A]">${nationalEmNumber}</p>
+    //     </div>
+    //     <div>
+    //       <h4 class="text-[#111111] text-[18px]">
+    //         <span>${dateTime}</span>
+    //       </h4>
+    //     </div>
+    //   </div>
+    // `;
+
+    //   historySlide.append(newCart);
   });
 }
 // aside section clear button handler 33333
